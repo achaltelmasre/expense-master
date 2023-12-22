@@ -3,6 +3,10 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
+import Transaction from './model/Transaction.js';
+import { getApiHealth } from './controllers/health.js';
+import { postApiTransaction, getApiTransactions } from './controllers/transaction.js';
+
 const app = express();
 app.use(express.json());
 
@@ -14,12 +18,11 @@ const connectDB = async () => {
 };
 connectDB();
 
-app.get('/health', async (req, res) => {
-    res.json({
-        success: true,
-        message: 'Server is running'
-    })
-});
+app.get('/api/health', getApiHealth );
+
+app.post('/api/transaction',  postApiTransaction );
+
+app.get('/api/transactions', getApiTransactions );
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
