@@ -11,10 +11,17 @@ const app = express();
 app.use(express.json());
 
 const connectDB = async () => {
-    const conn = await mongoose.connect(process.env.MONGO_URI)
-    if (conn) {
-        console.log('MongoDB connected');
+
+    try{
+        const conn = await mongoose.connect(process.env.MONGO_URI)
+        if (conn) {
+            console.log('MongoDB connected');
+        }
     }
+    catch(e) {
+        console.log(e.message);
+    }
+  
 };
 connectDB();
 
