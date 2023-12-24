@@ -41,4 +41,27 @@ const getApiTransactions =  async (req, res) => {
     })
   }
 
-export { postApiTransaction, getApiTransactions };
+  const putApiTransaction = async (req, res) => {
+    const {id} = req.params;
+
+    const {amount, type, category, description} = req.body;
+
+    await Transaction.updateOne({_id: id}, {$set : {
+       amount: amount,
+       type: type,
+       category: category,
+       description: description,
+    }});
+
+    const updatedTrasaction = await Transaction.findById(id);
+
+    return responder({
+        res,
+        success: true,
+        data: updatedTrasaction,
+        message: "Transaction update successfully"
+    });
+  }
+
+
+export { postApiTransaction, getApiTransactions, putApiTransaction };

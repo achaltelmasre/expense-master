@@ -5,8 +5,9 @@ dotenv.config();
 
 import Transaction from './model/Transaction.js';
 import { getApiHealth } from './controllers/health.js';
-import { postApiTransaction, getApiTransactions } from './controllers/transaction.js';
+import { postApiTransaction, getApiTransactions, putApiTransaction } from './controllers/transaction.js';
 import { postApiSignup , postApiLogin} from './controllers/user.js';
+
 
 const app = express();
 app.use(express.json());
@@ -28,17 +29,22 @@ connectDB();
 
 app.get('/api/health', getApiHealth );
 
+//post / singup
+app.post("/api/signup", postApiSignup );
+
+//post/ login
+app.post("/api/login", postApiLogin );
+
 //post/ transaction
 app.post('/api/transaction',  postApiTransaction );
 
 //get/ transaction
 app.get('/api/transactions', getApiTransactions );
 
-//post / singup
-app.post("/api/signup", postApiSignup );
+//put/ transaction
+app.put("/api/transaction/:id", putApiTransaction );
 
-//post/ login
-app.post("/api/login", postApiLogin );
+
 
 
 const PORT = process.env.PORT || 5000;
