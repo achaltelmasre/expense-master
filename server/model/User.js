@@ -14,8 +14,18 @@ const UserSchema = Schema({
         required: true,
         unique: true,
     },
+    password:{
+        type: String,
+        required: true,
+    },
     address: {
         type: String,
+    },
+    mobile:{
+        type: Number,
+        required: true,
+        unique:true,
+        
     },
     gender: {
         type: String,
