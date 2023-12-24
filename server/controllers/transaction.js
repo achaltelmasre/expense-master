@@ -1,5 +1,7 @@
 import Transaction from "./../model/Transaction.js";
 import { responder } from "../util.js";
+import { application } from "express";
+
 
 //post/ transaction
 const postApiTransaction = async (req, res) => {
@@ -84,5 +86,20 @@ const getApiTransactions =  async (req, res) => {
      })
   }
 
+  //get/transaction/user/:id
+   const getApiTransactionsUserId = async (req, res) => {
+     const {id} = req.params;
 
-export { postApiTransaction , getApiTransactions , putApiTransaction , deleteApiTrasaction};
+     const transactions = await Transaction.find({user: id}).populate('transaction user');
+
+     return responder({
+          res,
+          success: true,
+          data: {
+            id: id       
+          },
+          message: "Transaction fetched successfully"
+     });
+   }
+
+export { postApiTransaction , getApiTransactions , putApiTransaction , deleteApiTrasaction , getApiTransactionsUserId };
