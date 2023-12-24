@@ -90,7 +90,7 @@ const getApiTransactions =  async (req, res) => {
    const getApiTransactionsUserId = async (req, res) => {
      const {id} = req.params;
 
-     const transactions = await Transaction.find({user: id}).populate('transaction user');
+     const transaction = await Transaction.find({user: id}).populate('transaction user');
 
      return responder({
           res,
