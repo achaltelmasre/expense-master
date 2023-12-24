@@ -1,6 +1,7 @@
 import Transaction from "./../model/Transaction.js";
 import { responder } from "../util.js";
 
+//post/ transaction
 const postApiTransaction = async (req, res) => {
     const {amount, type, category, description} = req.body;
 
@@ -29,6 +30,7 @@ const postApiTransaction = async (req, res) => {
       }
 }
 
+//get/ transation
 const getApiTransactions =  async (req, res) => {
     const allTransaction = await Transaction.find();
   
@@ -41,6 +43,7 @@ const getApiTransactions =  async (req, res) => {
     })
   }
 
+  //put/ transaction
   const putApiTransaction = async (req, res) => {
     const {id} = req.params;
 
@@ -63,5 +66,23 @@ const getApiTransactions =  async (req, res) => {
     });
   }
 
+  //delete / transaction
+  const deleteApiTrasaction = async (req, res) => {
+    const { id } = req.params;
 
-export { postApiTransaction, getApiTransactions, putApiTransaction };
+    await Transaction.deleteOne({_id: id});
+
+     return responder({
+          res,
+          success: true,
+          data: {
+              id: id
+          },
+          message: `Successfully deleted transaction with id ${id}`,
+
+
+     })
+  }
+
+
+export { postApiTransaction , getApiTransactions , putApiTransaction , deleteApiTrasaction};
