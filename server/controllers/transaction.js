@@ -81,8 +81,7 @@ const getApiTransactions =  async (req, res) => {
               id: id
           },
           message: `Successfully deleted transaction with id ${id}`,
-
-
+          
      })
   }
 
@@ -96,7 +95,7 @@ const getApiTransactions =  async (req, res) => {
           res,
           success: true,
           data: {
-            id: id       
+            id: id        
           },
           message: "Transaction fetched successfully"
      });
