@@ -42,11 +42,16 @@ body{
   border: none;
   border-radius: 10px;
   min-width: 250px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-align: center;
-  /* color: white; */
+  color: white;
   font-size: 20px;
   margin-top: 15px;
 
+}
 
+.address-link{
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
 }
