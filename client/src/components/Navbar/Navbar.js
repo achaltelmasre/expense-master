@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold fs-4" href="#">
                EXPENSE  MASTER
@@ -57,7 +57,7 @@ function Navbar() {
               </li>
 
             </ul>
-              <div className="hello-user">
+              <div className="hello-user fs-5 me-5">
                         Hello , <span className="user">  {user.name || 'User!'}</span>
                        
                        {

@@ -44,7 +44,7 @@ function Login (){
       
         <div className="login">
               <Navbar/>
-            <form className="main-container">
+            <form className="main-container mt-5">
                 <h2 className="text-center p-2">Login</h2>
 
                 <div>
@@ -70,7 +70,7 @@ function Login (){
            > Login </button>
           
           <p className="text-center">
-          <Link to="../signup" className="address-link" >Create new Account</Link>
+          <Link to="../signup" className="address-link" >Create new Account 👈</Link>
 
           </p>
            

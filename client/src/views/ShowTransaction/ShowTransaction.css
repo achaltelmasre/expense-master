@@ -1,0 +1,27 @@
+/* .App{
+    margin: 20px 100px;
+  } */
+  .transaction-card{
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px 1px rgb(84, 67, 67);
+    background-color: white;
+    position: relative;
+  }
+  .transaction-amount{
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .debit-amount{
+    color:red;
+  }
+  .credit-amount{
+    color:green;
+  }
+  .transaction-category{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
