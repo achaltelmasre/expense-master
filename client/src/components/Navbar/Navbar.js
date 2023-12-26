@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
 
 function Navbar() {
   const [user, setUser] = useState({});
@@ -11,39 +11,53 @@ function Navbar() {
   }, []);
 
   return (
-    
-        <>  
-             <div className="navbar">
-                  <span>
-                         EXPENSE MASTERS 
-                  </span>
+    <>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-4" href="#">
+               EXPENSE  MASTER
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5 fs-5">
+              <li class="nav-item ms-5">
+                <Link to="/" class="nav-link active" aria-current="page" href="#">
+                  Home
+                </Link>
+              </li>
+              <li class="nav-item ms-5">
+                <Link  to="/addtransaction" class="nav-link active" aria-current="page" href="#">
+                    AddTransaction
+                </Link>
+              </li>
+              <li class="nav-item ms-5">
+                <Link  to="/showtransaction" class="nav-link active" aria-current="page" >
+                  ShowTransaction
+                </Link>
+              </li>
+              <li class="nav-item ms-5">
+                <Link to="/Login" class="nav-link active" aria-current="page" >
+                     Login
+                </Link>
+              </li>
+              <li class="nav-item ms-5">
+                <Link  to="/signup" class="nav-link active" aria-current="page" >
+                    Signup
+                </Link>
+              </li>
 
-                  <div className="navbar-link-container">
-                  <Link to="/" className="navbar-link">
-                        Home
-                    </Link>
-
-                    <Link to="addtransaction" className="navbar-link">
-                        Add Transaction
-                    </Link>
-
-                    <Link to="/showtransaction" className="navbar-link">
-                         Show Transaction
-                    </Link>
-
-                    <Link to="/login" className="navbar-link">
-                        Login
-                    </Link>
-
-                    <Link to="/signup" className="navbar-link">
-                        Signup
-                    </Link>
-
-                   
-                    
-                  </div>
-
-                  <div className="hello-user">
+            </ul>
+              <div className="hello-user">
                         Hello , <span className="user">  {user.name || 'User!'}</span>
                        
                        {
@@ -57,7 +71,9 @@ function Navbar() {
                         ) : null
                        }
                     </div>
-             </div>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }

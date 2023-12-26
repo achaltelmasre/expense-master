@@ -189,7 +189,7 @@ function Signup() {
         </button>
 
         <p className="text-center">
-          <Link to="../login" className="address-link  fs-4">
+          <Link to="../login" className="address-link  fs-5">
             Already have Account 👈
           </Link>
         </p>
