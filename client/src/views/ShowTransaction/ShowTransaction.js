@@ -44,30 +44,34 @@ function ShowTransaction () {
     setTransactions(transactionsData);
   };
 
-  useEffect(() =>{
-    const storageUser = JSON.parse(localStorage.getItem("add") || '{}');
 
-    if (storageUser?.username) {
+  useEffect(() =>{
+    const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
+      
+    if (storageUser?.email) {
          setUser(storageUser);
     }
     else{
       alert("you are not logged in ! ");
       window.location.href = "/login";
     }
-
     loadTrasaction();
+    
   }, [])
 
-  useEffect(() => {
-    const storageUser = JSON.parse(localStorage.getItem("add") || '{}');
+  // useEffect(() =>{
+  //   const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
 
-    if (storageUser?.username) {
-       alert("You are already logged in!");
-       window.location.href = "/login";
-    }
+  //   if (storageUser?.username) {
+  //        setUser(storageUser);
+  //        alert("you are not logged in ! ");
+  //        window.location.href = "/login";
+  //   }
    
+  //   loadTrasaction();
+  // }, [])
 
-  }, [])
+  
 
   return (
     <div className='App'>

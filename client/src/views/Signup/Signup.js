@@ -45,7 +45,7 @@ function Signup() {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {                                      
     const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
 
     if (storageUser?.email) {

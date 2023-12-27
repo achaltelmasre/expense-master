@@ -58,7 +58,7 @@ function Navbar() {
 
             </ul>
               <div className="hello-user fs-5 me-5">
-                        Hello , <span className="user">  {user.name || 'User!'}</span>
+                        Hello , <span className="user">  {user?.name || 'User!'}</span>
                        
                        {
                         user?.name ? 

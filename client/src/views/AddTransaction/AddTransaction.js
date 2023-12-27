@@ -31,15 +31,16 @@ function AddTransaction() {
   };
 
   useEffect(() =>{
-    const storageUser = JSON.parse(localStorage.getItem("add") || '{}');
-
-    if (storageUser?.username) {
+    const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
+      
+    if (storageUser?.email) {
          setUser(storageUser);
     }
     else{
       alert("you are not logged in ! ");
       window.location.href = "/login";
     }
+    
   }, [])
 
   return (
@@ -102,13 +103,15 @@ function AddTransaction() {
               setCategory(e.target.value)
             }} 
              name="cars" id="cars" className="ps-4 pe-3  ms-3">
-            <option value="None">None</option>
-            <option value="Food">Food</option>
-              <option value="Shopping">Shopping</option>
-              <option value="Rent">Rent</option>
-              <option value="Travel">Travel</option>
-              <option value="Salary">Salary</option>
-              <option value="Other">Other</option>
+            <option value="none">None</option>
+            <option value="food">Food</option>
+              <option value="shopping">Shopping</option>
+              <option value="rent">Rent</option>
+              <option value="travel">Travel</option>
+              <option value="salary">Salary</option>
+              <option value="education">Education</option>
+              <option value="entertainment">entertainment</option>
+              <option value="other">Other</option>
             </select>
           </div>
 
