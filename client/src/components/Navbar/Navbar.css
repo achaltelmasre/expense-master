@@ -1,13 +1,11 @@
-.navbar{
-    background-color: white;
-    padding-top: 15px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
-    display: flex;
-   justify-content: space-between;
+.nav{
+    background-color: #fff2cc;
+   
 }
-.navbar-link{
+li:hover{
+    color: red;
+}
+/* .nav-link{
     text-decoration: none;
     color: black;
     font-size: 23px;
@@ -15,7 +13,7 @@
     padding-top: 20px;
     padding-bottom: 5px;
    
-}
+} */
 .navbar-link:hover{
 
     color: red;
