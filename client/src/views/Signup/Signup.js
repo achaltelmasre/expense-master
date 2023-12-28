@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Signup.css";
 import { Link } from "react-router-dom";
 import Navbar from "./../../components/Navbar/Navbar";
+import showToast from 'crunchy-toast';
 
 function Signup() {
   const [name, setName] = useState("");
@@ -23,7 +24,8 @@ function Signup() {
       !address ||
       !gender
     ) {
-      alert("Please enter all fields");
+      showToast('Please enter all fields', 'alert', 6000);
+
       return;
     }
 
@@ -49,7 +51,8 @@ function Signup() {
     const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
 
     if (storageUser?.email) {
-      alert("You are already logged in!");
+      showToast('You are already logged in!', 'warning', 4000);
+
       window.location.href = "/";
     }
   }, []);

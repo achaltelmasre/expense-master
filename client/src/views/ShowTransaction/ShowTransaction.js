@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "./ShowTransaction.css";
 import Navbar from '../../components/Navbar/Navbar';
+import showToast from 'crunchy-toast';
+
 
 function ShowTransaction () {
   const [user, setUser] = useState("");
@@ -44,6 +46,18 @@ function ShowTransaction () {
     setTransactions(transactionsData);
   };
 
+  const deleteTransaction = async () =>{
+    const response = await axios.delete("/api/transaction/:id")
+    const transactionsData = response?.data;
+     console.log(transactionsData)
+    alert("delete transaction successfully")
+    loadTrasaction();
+   
+  }
+  const updateTransaction = async () => {
+    const response = await axios.put("/api/transaction/:id")
+  }
+
 
   useEffect(() =>{
     const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
@@ -52,25 +66,12 @@ function ShowTransaction () {
          setUser(storageUser);
     }
     else{
-      alert("you are not logged in ! ");
+      showToast('Alert! An error occurred', 'alert', 6000);
       window.location.href = "/login";
     }
     loadTrasaction();
     
   }, [])
-
-  // useEffect(() =>{
-  //   const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
-
-  //   if (storageUser?.username) {
-  //        setUser(storageUser);
-  //        alert("you are not logged in ! ");
-  //        window.location.href = "/login";
-  //   }
-   
-  //   loadTrasaction();
-  // }, [])
-
   
 
   return (
@@ -108,6 +109,16 @@ function ShowTransaction () {
                   <p>
                     {description}
                   </p>
+
+                  <span className=''
+                   onClick={() =>{ deleteTransaction(_id)}}>
+                    🗑️
+                  </span>
+                  
+                  <span
+                     onClick={() => { updateTransaction(_id)}}>
+                    ✏️
+                  </span>
 
               </div>
           )

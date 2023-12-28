@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import './Login.css';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import showToast from 'crunchy-toast';
 
 function Login (){
 
@@ -34,7 +35,8 @@ function Login (){
         const storageUser = JSON.parse(localStorage.getItem("user") || '{}')
         
         if (storageUser?.email) {
-            alert("You are already logged in!");
+            showToast('You are already logged in!', 'warning', 4000);
+            
             window.location.href = "/";
         }
 

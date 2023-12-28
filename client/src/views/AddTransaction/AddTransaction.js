@@ -2,6 +2,7 @@ import React, { useEffect ,useState } from "react";
 import axios from "axios";
 import "./AddTransaction.css";
 import Navbar from "./../../components/Navbar/Navbar";
+import showToast from 'crunchy-toast';
 
 function AddTransaction() {
   const [user, setUser] = useState("");
@@ -9,6 +10,7 @@ function AddTransaction() {
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
+  showToast('This is a sample toast message', 'success', 3000);
 
   const Addtransaction = async () => {
     const response = await axios.post("/api/transaction", {
@@ -37,7 +39,8 @@ function AddTransaction() {
          setUser(storageUser);
     }
     else{
-      alert("you are not logged in ! ");
+      showToast('you are not login', 'alert', 6000)
+
       window.location.href = "/login";
     }
     
