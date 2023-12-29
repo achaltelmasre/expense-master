@@ -2,12 +2,11 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer.js";
 import "./Home.css";
-// import Footers from "../../components/Footer/Footers";
+// import Footer from "../../components/Footer/Footer";
 
 
 function Home () {
     
-
     return(
         <>
          <div >

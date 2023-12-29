@@ -46,14 +46,15 @@ function ShowTransaction () {
     setTransactions(transactionsData);
   };
 
-  const deleteTransaction = async () =>{
-    const response = await axios.delete("/api/transaction/:id")
-    const transactionsData = response?.data;
-     console.log(transactionsData)
-    alert("delete transaction successfully")
-    loadTrasaction();
-   
+  const deleteTransaction = async (id) =>{
+    const response = await axios.delete(`/api/transaction/${id}`)
+   if (response?.data?.success) {
+      loadTrasaction();
+   }
+   showToast('delete transaction successfully', 'success', 6000);
   }
+
+  
   const updateTransaction = async () => {
     const response = await axios.put("/api/transaction/:id")
   }
