@@ -85,6 +85,20 @@ const getApiTransactions =  async (req, res) => {
      })
   }
 
+  //get/transaction:id
+   const getApiTransactionsId = async (req, res) => {
+    const {id} = req.params;
+
+   const oneTransaction = await Transaction.findOne({_id : id});
+
+    return responder({
+      res,
+      success: true,
+      data: oneTransaction,
+      message: "fetched transaction id"
+    })
+   }
+
   //get/transaction/user/:id
    const getApiTransactionsUserId = async (req, res) => {
      const {id} = req.params;
@@ -102,4 +116,4 @@ const getApiTransactions =  async (req, res) => {
      });
    }
 
-export { postApiTransaction , getApiTransactions , putApiTransaction , deleteApiTrasaction , getApiTransactionsUserId };
+export { postApiTransaction , getApiTransactions , putApiTransaction , deleteApiTrasaction , getApiTransactionsId , getApiTransactionsUserId };

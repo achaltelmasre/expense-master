@@ -5,6 +5,7 @@ import Login from './views/Login/Login';
 import Home from './views/Home/Home';
 import AddTransaction from './views/AddTransaction/AddTransaction';
 import ShowTransaction from './views/ShowTransaction/ShowTransaction';
+import UpdateTransaction from './views/UpdateTransaction/UpdateTransaction';
 import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
    {
         path: '/addtransaction',
         element: <AddTransaction/>
+   },
+   {
+    path: '/updatetransact',
+    element: <UpdateTransaction/>
    },
    {
          path: '/showtransaction',
