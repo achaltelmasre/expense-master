@@ -5,9 +5,10 @@ import { application } from "express";
 
 //post/ transaction
 const postApiTransaction = async (req, res) => {
-    const {amount, type, category, description} = req.body;
+    const {user,amount, type, category, description} = req.body;
 
     const transaction = new Transaction({
+       user,
        amount,
        type,
        category,
@@ -103,15 +104,12 @@ const getApiTransactions =  async (req, res) => {
    const getApiTransactionsUserId = async (req, res) => {
      const {id} = req.params;
 
-     const transaction = await Transaction.find({user: id}).populate('transaction user');
+     const transaction = await Transaction.find({user: id})
 
      return responder({
           res,
           success: true,
-          data: {
-            id: id  
-                  
-          },
+          data: transaction,
           message: "Transaction fetched successfully"
      });
    }

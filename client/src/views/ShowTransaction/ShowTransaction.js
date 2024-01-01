@@ -26,7 +26,12 @@ function ShowTransaction () {
   }
 
   const loadTrasaction = async () => {
-    const response = await axios.get("/api/transactions");
+
+    const getUser = JSON.parse(localStorage.getItem("user")||"{}");
+    const storageUser = getUser._id;
+    console.log(storageUser)
+
+    const response = await axios.get(`/api/transaction/user/${storageUser}`);
     const transactionsData = response?.data?.data;
     
     let totalCredit = 0;

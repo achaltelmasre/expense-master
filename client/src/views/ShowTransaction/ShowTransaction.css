@@ -29,14 +29,14 @@
   }
   
   .total-credit{
-    color: red;
+    color: green;
     border: 2px dotted rgb(248, 248, 1);
     width: 200px;
     padding: 10px;
   }
 
   .total-debit{
-    color: green;
+    color:red !important;
     border: 2px dotted rgb(248, 248, 1);
     padding: 10px;
     margin-left: 200px;
