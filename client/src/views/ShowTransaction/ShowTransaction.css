@@ -2,10 +2,12 @@
     margin: 20px 100px;
   } */
   .transaction-card{
+  
     border: 1px solid #ccc;
+    width: 700px;
     border-radius: 15px;
     padding: 10px 20px;
-    margin: 20px 0;
+    margin: 20px auto;
     box-shadow: 0 0 10px 1px rgb(84, 67, 67);
     background-color: white;
     position: relative;
@@ -24,4 +26,67 @@
     position: absolute;
     top: 20px;
     right: 20px;
+  }
+  
+  .total-credit{
+    color: red;
+    border: 2px dotted rgb(248, 248, 1);
+    width: 200px;
+    padding: 10px;
+  }
+
+  .total-debit{
+    color: green;
+    border: 2px dotted rgb(248, 248, 1);
+    padding: 10px;
+    margin-left: 200px;
+    
+  }
+  .date{
+    position: absolute;
+    top: 55px;
+    right: 30px;
+  }
+  .time{
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+  }
+
+  .delete-btn{
+     position: absolute;
+     right: 16px;
+     bottom: 9px;
+     font-size: 17px;
+     border-radius: 50%;
+     box-shadow: 0 0 5px 1px rgb(234, 10, 10) ;
+     padding: 3px;
+     background-color: red;
+  } 
+  .update-btn{
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px green;
+    padding: 4px;
+    background-color: green;
+   
+  
+  }
+
+  @media only screen and (max-width: 768px) {
+
+   
+  
+    .total-debit{
+      color: green;
+      border: 2px dotted rgb(248, 248, 1);
+      padding: 10px;
+      margin-left: 50px;
+      
+    }
+
+    .transaction-card{
+  
+      width: 400px;
+      
+    }
   }

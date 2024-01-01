@@ -82,8 +82,10 @@ function ShowTransaction () {
 
         <div className='m-5'>
 
-      <h2 >Credit: {creditSum}</h2>
-      <h2>Debit: {debitSum}</h2>
+   <div className='mb-5'>
+      <span className='total-credit fs-2  ' >Credit: +{creditSum}</span>
+      <span className='total-debit fs-2 '>Debit: -{debitSum}</span>
+    </div>
 
       {
         transactions?.map((transactions, index) => {
@@ -94,12 +96,14 @@ function ShowTransaction () {
 
 
           return (
-            <div key= {index} className='transaction-card'>
+            <div key= {index} className='transaction-card  '>
               <span className={`transaction-amount ${type==="debit" ? "debit-amount ": "credit-amount"}`}>
                 {type==="debit" ? "-" : "+"}
                 {amount}
                 </span>
-                { type==="debit" ? "debited" : "credite" } on {date} at {time}
+                { type==="debit" ? "debited" : "credite" } 
+                  <span className='date'>Date: {date}</span>
+                  <span className='time'>Time: {time}</span> 
 
                 <span className='transaction-category'>
                   {CATEGORY_EMOJI_MAP [category]}
@@ -111,12 +115,12 @@ function ShowTransaction () {
                     {description}
                   </p>
 
-                  <span className=''
+                  <span className='delete-btn'
                    onClick={() =>{ deleteTransaction(_id)}}>
                     🗑️
                   </span>
                   
-                  <span
+                  <span className='update-btn'
                      onClick={() => { updateTransaction(_id)}}>
                     ✏️
                   </span>
