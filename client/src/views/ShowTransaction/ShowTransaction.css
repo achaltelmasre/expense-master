@@ -62,14 +62,14 @@
      box-shadow: 0 0 5px 1px rgb(234, 10, 10) ;
      padding: 3px;
      background-color: red;
+     cursor: pointer;
   } 
   .update-btn{
     border-radius: 50%;
     box-shadow: 0 0 5px 1px green;
     padding: 4px;
     background-color: green;
-   
-  
+   cursor: pointer;
   }
 
   @media only screen and (max-width: 768px) {

@@ -10,7 +10,7 @@ function AddTransaction() {
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  showToast('This is a sample toast message', 'success', 3000);
+
 
   const Addtransaction = async () => {
     const response = await axios.post("/api/transaction", {

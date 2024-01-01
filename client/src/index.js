@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <AddTransaction/>
    },
    {
-    path: '/updatetransact',
+    path: '/updatetransaction/:id',
     element: <UpdateTransaction/>
    },
    {

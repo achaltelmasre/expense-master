@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "./ShowTransaction.css";
 import Navbar from '../../components/Navbar/Navbar';
+import { Link } from "react-router-dom";
 import showToast from 'crunchy-toast';
 
 
@@ -53,12 +54,6 @@ function ShowTransaction () {
    }
    showToast('delete transaction successfully', 'success', 6000);
   }
-
-  
-  const updateTransaction = async () => {
-    const response = await axios.put("/api/transaction/:id")
-  }
-
 
   useEffect(() =>{
     const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
@@ -120,10 +115,12 @@ function ShowTransaction () {
                     🗑️
                   </span>
                   
-                  <span className='update-btn'
-                     onClick={() => { updateTransaction(_id)}}>
+                  <Link className='update-btn'
+                    //  onClick={() => { updatedTransaction(_id)}}
+                    to={`/updatetransaction/${_id}`} 
+                    >
                     ✏️
-                  </span>
+                  </Link>
 
               </div>
           )
