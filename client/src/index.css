@@ -38,13 +38,13 @@ body{
 }
 
 .button{
-  background-color: black;
+  background-color: red;
   border: none;
   border-radius: 10px;
   min-width: 250px;
   padding: 10px 100px;
   text-align: center;
-  color: white;
+  color: black;
   font-size: 20px;
   margin-top: 15px;
 
